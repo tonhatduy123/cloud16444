@@ -4,13 +4,13 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <?php
 //Get custmer information
-$query="SELECT custName, address, email, telephone
+$query="SELECT custname, address, email, telephone
 			FROM customer WHERE username='". $_SESSION["us"] . "'";
 	$result=pg_query($conn,$query) or die(pg_error($conn));
 	$row=pg_fetch_array($result, NULL,  pg_ASSOC);
 	$us=$_SESSION["us"];
 	$email=$row["email"];
-	$fullname=$row["custName"];
+	$fullname=$row["custname"];
 	$address = $row["address"];
 	$telephone=$row["telephone"];		
 //Update information when the user presses the "Update" button
